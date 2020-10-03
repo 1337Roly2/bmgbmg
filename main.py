@@ -2,7 +2,7 @@ import discord
  
 from discord.ext import commands
 from text_bot import TextBot
-from text_bot2 import TextBot
+from text_bot2 import TextBot2
  
 bot = commands.Bot(
 	command_prefix=commands.when_mentioned_or('!'),
@@ -10,6 +10,7 @@ bot = commands.Bot(
 )
  
 bot.add_cog(TextBot(bot))
+bot.add_cog(TextBot2(bot))
  
 @bot.event
 async def on_ready():
