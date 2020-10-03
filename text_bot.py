@@ -1,7 +1,7 @@
 from discord.ext import commands
 from discord.utils import get
  
-words = ['bmg','чм','черн','метка','black','mark','gang','чёрная','черный','чёрный','legen','легенд']
+words = ['bmg','чм','метка','black','mark','gang','чёрн','черн','legen','легенд']
 
  
 class TextBot(commands.Cog):
