@@ -1,7 +1,9 @@
 from discord.ext import commands
 from discord.utils import get
  
-words = ['чм','черн','метка','black','mark','gang','чёрная','черный','чёрный','стиль','стил','legen','легенд']  
+words = ['чм','черн','метка','black','mark','gang','чёрная','черный','чёрный','стиль','стил','legen','легенд']
+words2 = ['style','стил']   
+
  
 class TextBot(commands.Cog):
  
@@ -15,6 +17,24 @@ class TextBot(commands.Cog):
             return
  
         if (any(st in ctx.content.lower() for st in words)):
+ 
+            await ctx.add_reaction(get(self.bot.emojis, name='c1')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='e1')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='r1')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='n1')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='a1')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='ya')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='bmg')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='m1')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='e2')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='t1')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='k1')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='a2')) 
+            #await ctx.add_reaction('👀')
+            await self.bot.process_commands(ctx)
+            
+             
+        if (any(st in ctx.content.lower() for st in words2)):
  
             await ctx.add_reaction(get(self.bot.emojis, name='c1')) 
             await ctx.add_reaction(get(self.bot.emojis, name='e1')) 
