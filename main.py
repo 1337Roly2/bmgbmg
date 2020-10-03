@@ -2,7 +2,6 @@ import discord
  
 from discord.ext import commands
 from text_bot import TextBot
-from text_bot2 import TextBot2
  
 bot = commands.Bot(
 	command_prefix=commands.when_mentioned_or('!'),
@@ -10,12 +9,11 @@ bot = commands.Bot(
 )
  
 bot.add_cog(TextBot(bot))
-bot.add_cog(TextBot2(bot))
  
 @bot.event
 async def on_ready():
 	print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
 	
-	await bot.change_presence(status = discord.Status.online, activity = discord.Game('Чёрную Метку'))
+	await bot.change_presence(status = discord.Status.online, activity = discord.status('Чёрную Метку'))
  
 bot.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
