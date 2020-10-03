@@ -36,12 +36,16 @@ class TextBot(commands.Cog):
 
         if (any(st in ctx.content.lower() for st in words2)):
  
+            await ctx.add_reaction(get(self.bot.emojis, name='style')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='c5')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='t5')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='i5')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='l5')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='ya5')) 
             await ctx.add_reaction(get(self.bot.emojis, name='probel')) 
-            await ctx.add_reaction(get(self.bot.emojis, name='m1')) 
-            await ctx.add_reaction(get(self.bot.emojis, name='e2')) 
-            await ctx.add_reaction(get(self.bot.emojis, name='t1')) 
-            await ctx.add_reaction(get(self.bot.emojis, name='k1')) 
-            await ctx.add_reaction(get(self.bot.emojis, name='a2')) 
-            await ctx.add_reaction(get(self.bot.emojis, name='bmg2')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='n5')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='e5')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='t6')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='style2')) 
             #await ctx.add_reaction('👀')
             await self.bot.process_commands(ctx) 
