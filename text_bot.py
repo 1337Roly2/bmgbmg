@@ -2,7 +2,6 @@ from discord.ext import commands
 from discord.utils import get
  
 words = ['чм','черн','метка','black','mark','gang','чёрная','черный','чёрный','стиль','стил','legen','легенд']
-words2 = ['style','стил']   
 
  
 class TextBot(commands.Cog):
@@ -33,7 +32,20 @@ class TextBot(commands.Cog):
             #await ctx.add_reaction('👀')
             await self.bot.process_commands(ctx)
             
-             
+words2 = ['style','стил']
+
+ 
+class TextBot(commands.Cog):
+ 
+    def __init__(self, bot):
+        self.bot = bot
+ 
+    @commands.Cog.listener()
+    async def on_message(self, ctx):
+        """ Emoji reacts to someone who says"""
+        if ctx.author == self.bot.user:
+            return
+       
         if (any(st in ctx.content.lower() for st in words2)):
  
             await ctx.add_reaction(get(self.bot.emojis, name='c5')) 
