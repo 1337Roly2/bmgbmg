@@ -2,6 +2,7 @@ import discord
  
 from discord.ext import commands
 from text_bot import TextBot
+from text_bot2 import TextBot
  
 bot = commands.Bot(
 	command_prefix=commands.when_mentioned_or('!'),
