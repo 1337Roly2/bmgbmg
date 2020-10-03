@@ -34,7 +34,8 @@ class TextBot(commands.Cog):
             #await ctx.add_reaction('👀')
             await self.bot.process_commands(ctx) 
             
-        else if (any(st in ctx.content.lower() for st in w2)):
+         else:
+         if (any(st in ctx.content.lower() for st in w2)):
           
             await ctx.add_reaction(get(self.bot.emojis, name='style')) 
             await ctx.add_reaction(get(self.bot.emojis, name='c5')) 
