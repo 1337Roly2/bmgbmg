@@ -4,7 +4,7 @@ from discord.utils import get
 w2 = ['style','стил']
 
  
-class TextBot(commands.Cog):
+class TextBot2(commands.Cog):
  
     def __init__(self, bot):
         self.bot = bot
