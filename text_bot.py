@@ -30,7 +30,7 @@ class TextBot(commands.Cog):
             await ctx.add_reaction(get(self.bot.emojis, name='t1')) 
             await ctx.add_reaction(get(self.bot.emojis, name='k1')) 
             await ctx.add_reaction(get(self.bot.emojis, name='a2')) 
-            await ctx.add_reaction(get(self.bot.emojis, name='bmg')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='bmg2')) 
             #await ctx.add_reaction('👀')
             await self.bot.process_commands(ctx)
             
@@ -60,6 +60,6 @@ class TextBot(commands.Cog):
             await ctx.add_reaction(get(self.bot.emojis, name='n5')) 
             await ctx.add_reaction(get(self.bot.emojis, name='e5')) 
             await ctx.add_reaction(get(self.bot.emojis, name='t6')) 
-            await ctx.add_reaction(get(self.bot.emojis, name='style')) 
+            await ctx.add_reaction(get(self.bot.emojis, name='style2')) 
             #await ctx.add_reaction('👀')
             await self.bot.process_commands(ctx)
