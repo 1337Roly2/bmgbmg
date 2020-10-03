@@ -32,7 +32,7 @@ class TextBot(commands.Cog):
             #await ctx.add_reaction('👀')
             await self.bot.process_commands(ctx)
             
-words2 = ['style','стил']
+w2 = ['style','стил']
 
  
 class TextBot(commands.Cog):
@@ -46,7 +46,7 @@ class TextBot(commands.Cog):
         if ctx.author == self.bot.user:
             return
        
-        if (any(st in ctx.content.lower() for st in words2)):
+        if (any(st in ctx.content.lower() for st in w2)):
  
             await ctx.add_reaction(get(self.bot.emojis, name='c5')) 
             await ctx.add_reaction(get(self.bot.emojis, name='t5')) 
