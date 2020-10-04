@@ -19,7 +19,6 @@ async def on_ready():
 @tasks.loop(seconds=60)
 async def change_status():
 	await bot.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=(next(status))))
-
 	
 @bot.event
 async def on_member_join(member):
