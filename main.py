@@ -8,7 +8,7 @@ bot = commands.Bot(
 	command_prefix=commands.when_mentioned_or('!'),
 	description='BOT'
 )
-status = cycle(['стрим Санчиза','стрим Пахана','стрим Стила'],'стрим Эскобарова') 
+status = cycle(['стрим Санчиза','стрим Пахана','стрим Стила','стрим Эскобарова']) 
 bot.add_cog(TextBot(bot))
  
 @bot.event
