@@ -18,7 +18,7 @@ async def on_ready():
 	       
 @tasks.loop(seconds=3)
 async def change_status():
-	await bot.change_presence(status = discord.Status.online, activity = discord.Watching(next(status)))
+	await bot.change_presence(status = discord.Status.online, activity = discord.Watch(next(status)))
 	#await bot.change_presence(activity=discord.watching(next(status)))
 
 @bot.event
