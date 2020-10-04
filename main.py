@@ -16,10 +16,6 @@ async def on_ready():
 	print('Logged in as:\n{0} (ID: {0.id})'.format(client.user))
 
 
-@client.command(pass_context=True)
-async def join(ctx):
-	channel = ctx.message.author.voice.voice_channel
-	awiat client.join_voice_channel(channel)
 
 
 @tasks.loop(seconds=60)
