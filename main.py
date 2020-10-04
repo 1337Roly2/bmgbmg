@@ -8,7 +8,7 @@ bot = commands.Bot(
 	command_prefix=commands.when_mentioned_or('!'),
 	description='BOT'
 )
-status2 = cycle(['стрим Санчиза','стрим Пахана']) 
+status = cycle(['стрим Санчиза','стрим Пахана']) 
 bot.add_cog(TextBot(bot))
  
 @bot.event
@@ -18,7 +18,7 @@ async def on_ready():
 	       
 @tasks.loop(seconds=3)
 async def change_status():
-	await bot.change_presence(status = discord.Status.online, activity = discord.watching(next(status2)))
+	await bot.change_presence(status = discord.Status.online, activity = discord.Game(next(status)))
 	#await bot.change_presence(activity=discord.watching(next(status)))
 
 @bot.event
