@@ -29,7 +29,7 @@ async def join(ctx):
 async def leave(ctx):
 	server = ctx.message.server
 	voice_bot = bot.voice_bot_in(server)
-	awiat voice_bot.disconnetc()
+	awiat voice_bot.disconnect()
 
 @bot.event
 async def on_member_join(member):
