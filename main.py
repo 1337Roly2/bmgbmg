@@ -24,7 +24,7 @@ async def change_status():
 @bot.command(pass_context=True)
 async def join(ctx):
 	channel = ctx.message.author.voice.voice_channel
-	awiat Bot.join_voice_channel(channel)
+	awiat bot.join_voice_channel(channel)
 
 
 @bot.event
@@ -34,7 +34,5 @@ async def on_member_join(member):
 @bot.event
 async def on_member_remove(member):
 	print(f'{member} left.')
-	      
-	
-	
+
 bot.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
