@@ -18,15 +18,3 @@ async def on_ready():
 	await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="стрим Санчиза"))
  
 bot.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
-
-@bot.event
-async def on_member_join(member):
-    guild = member.guild.default_channel
-    fmt = 'Welcome to the {1.name} Discord guild, {0.mention}, please read the rules and enjoy your stay.'
-    await bot.send_message(server, fmt.format(member, member.guild))
-
-@bot.event
-async def on_member_remove(member):
-    guild = member.guild.default_channel
-    fmt = '{0.mention} has left/been kicked from the guild.'
-    await bot.send_message(guild, fmt.format(member, member.guild))
