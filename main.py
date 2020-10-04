@@ -8,7 +8,7 @@ from itertools import cycle
 client = commands.Bot(command_prefix=commands.when_mentioned_or('!'))
 
 
-status = cycle(['стрим Санчиза','аккаунты на FunPay','стрим Пахана','стрим Стила','канал #about-us','стрим Эскобарова','за блоком']) 
+
 client.add_cog(TextBot(client))
  
 @client.event
@@ -22,7 +22,7 @@ async def join(ctx):
     channel = author.voice_channel
     await client.join_voice_channel(channel)
 
-
+status = cycle(['стрим Санчиза','аккаунты на FunPay','стрим Пахана','стрим Стила','канал #about-us','стрим Эскобарова','за блоком']) 
 @tasks.loop(seconds=60)
 async def change_status():
 	await client.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=(next(status))))
