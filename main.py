@@ -14,7 +14,14 @@ bot.add_cog(TextBot(bot))
 async def on_ready():
 	change_status.start()
 	print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
-	       
+
+
+@bot.command(pass_context=True)
+async def join(ctx):
+	channel = ctx.message.author.voice.voice_channel
+	awiat bot.join_voice_channel(channel)
+
+
 @tasks.loop(seconds=60)
 async def change_status():
 	await bot.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=(next(status))))
