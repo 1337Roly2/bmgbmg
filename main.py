@@ -21,13 +21,12 @@ bot.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
 
 @bot.event
 async def on_member_join(member):
-    server = member.guild.default_channel
-    fmt = 'Welcome to the {1.name} Discord server, {0.mention}, please read the 
-    rules and enjoy your stay.'
+    guild = member.guild.default_channel
+    fmt = 'Welcome to the {1.name} Discord guild, {0.mention}, please read the rules and enjoy your stay.'
     await bot.send_message(server, fmt.format(member, member.guild))
 
 @bot.event
 async def on_member_remove(member):
-    server = member.guild.default_channel
-    fmt = '{0.mention} has left/been kicked from the server.'
-    await bot.send_message(server, fmt.format(member, member.guild))
+    guild = member.guild.default_channel
+    fmt = '{0.mention} has left/been kicked from the guild.'
+    await bot.send_message(guild, fmt.format(member, member.guild))
