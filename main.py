@@ -22,7 +22,7 @@ async def change_status():
 
 @bot.command(pass_context-True)
 async def join(ctx):
-	channel - ctx.message.author.voice.voice_channel
+	channel = ctx.message.author.voice.voice_channel
 	awiat bot.join_voice_channel(channel)
 
 @bot.command(pass_context-True)
