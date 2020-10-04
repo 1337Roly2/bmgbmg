@@ -20,7 +20,7 @@ async def on_ready():
 async def change_status():
 	#await bot.change_presence(status = discord.Status.online, activity = discord.Watching(next(status)))
 	#await bot.change_presence(activity=discord.watching(next(status)))
-	await bot.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching(next(status))))
+	await bot.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=(next(status))))
 @bot.event
 async def on_member_join(member):
 	print(f'{member} joined.')
