@@ -13,6 +13,7 @@ bot.add_cog(TextBot(bot))
  
 @bot.event
 async def on_ready():
+	change_status.start()
 	print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
 	       
 @tasks.loop(seconds=3)
