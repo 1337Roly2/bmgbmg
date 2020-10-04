@@ -8,7 +8,7 @@ bot = commands.Bot(
 	command_prefix=commands.when_mentioned_or('!'),
 	description='BOT'
 )
-status = cycle(['стрим Санчиза','стрим Пахана']) 
+status = cycle(['стрим Санчиза','стрим Пахана','стрим Стила'],'стрим Эскобарова') 
 bot.add_cog(TextBot(bot))
  
 @bot.event
@@ -16,7 +16,7 @@ async def on_ready():
 	change_status.start()
 	print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
 	       
-@tasks.loop(seconds=3)
+@tasks.loop(seconds=60)
 async def change_status():
 	#await bot.change_presence(status = discord.Status.online, activity = discord.Watching(next(status)))
 	#await bot.change_presence(activity=discord.watching(next(status)))
