@@ -4,10 +4,9 @@ from discord.ext import commands, tasks
 from text_bot import TextBot
 from itertools import cycle
  
-bot = commands.Bot(
-	command_prefix=commands.when_mentioned_or('!'),
-	description='BOT'
-)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('!'))
+
+
 status = cycle(['стрим Санчиза','аккаунты на FunPay','стрим Пахана','стрим Стила','канал #about-us','стрим Эскобарова','за блоком']) 
 bot.add_cog(TextBot(bot))
  
@@ -20,11 +19,6 @@ async def on_ready():
 async def change_status():
 	await bot.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=(next(status))))
 
-
-@bot.command(pass_context=True)
-async def join(ctx):
-	channel = ctx.message.author.voice.voice_channel
-	awiat bot.join_voice_channel(channel)
 
 
 @bot.event
