@@ -20,16 +20,12 @@ async def on_ready():
 async def change_status():
 	await bot.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=(next(status))))
 
+
 @bot.command(pass_context=True)
 async def join(ctx):
 	channel = ctx.message.author.voice.voice_channel
 	awiat bot.join_voice_channel(channel)
 
-@bot.command(pass_context=True)
-async def leave(ctx):
-	server = ctx.message.server
-	voice_bot = bot.voice_bot_in(server)
-	awiat voice_bot.disconnect()
 
 @bot.event
 async def on_member_join(member):
