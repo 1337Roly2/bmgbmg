@@ -2,20 +2,22 @@ import discord
  
 from discord.ext import commands
 from text_bot import TextBot
+from itertools import cycle
  
 bot = commands.Bot(
 	command_prefix=commands.when_mentioned_or('!'),
 	description='BOT'
 )
- 
+status = cycle('['стрим Санчиза','стрим Пахана']) 
 bot.add_cog(TextBot(bot))
  
 @bot.event
 async def on_ready():
 	print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
-	
-	#await bot.change_presence(status = discord.Status.online, activity = discord.Game('Чёрную Метку'))
-	await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="стрим Санчиза"))
+	       
+@tasks.loop(seconds=3)
+async def change_status():
+	await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching(next(status)))
 
 @bot.event
 async def on_member_join(member):
