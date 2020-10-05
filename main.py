@@ -46,12 +46,12 @@ async def leave(ctx):
 	if voice and voice.is_connected():
 		await voice.disconnect()
 
-@commands.Cog.listener()
-async def on_member_join(self,member):
-await channel('660039668506558484').send('message: ')
+@client.event
+async def on_member_join(member):
+	for channel in member.guild.channels:
+		if str(channel)=="general":
+			print('member')
+			await client.send_message(f"""Welcome {member.mention}""")
 
-@commands.Cog.listener()
-async def on_member_remove(self,member):
-await channel('660039696826761221').send('message: ')
 
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
