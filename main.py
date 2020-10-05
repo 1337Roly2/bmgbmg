@@ -54,4 +54,11 @@ async def before_command(self, ctx):
 
 	await channel.connect(reconnect=True)
 
+@client.command(pass_context=True)
+async def join(ctx):
+	channel = ctx.message.author.voice.voice_channel
+	awiat client.join_voice_channel(channel)
+
+
+
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
