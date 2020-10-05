@@ -27,8 +27,8 @@ async def on_member_join(member):
 async def on_member_remove(member):
 	print(f'{member} left.')
      
-@client.command()
-async def info(ctx):
+@client.command(pass_contex = True)
+async def emb(ctx):
     embed = discord.Embed(title=f"{ctx.guild.name}", description="Lorem Ipsum asdasd", timestamp=datetime.datetime.utcnow(), color=discord.Color.black())
     embed.add_field(name="Server created at", value=f"{ctx.guild.created_at}")
     embed.add_field(name="Server Owner", value=f"{ctx.guild.owner}")
