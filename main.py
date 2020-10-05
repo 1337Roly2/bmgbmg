@@ -3,7 +3,10 @@ import discord
 from discord.ext import commands, tasks
 from text_bot import TextBot
 from itertools import cycle
+from discord.utils import get
 import datetime
+import os
+import youtube_dl
  
 client = commands.Bot(command_prefix = '!')
 
