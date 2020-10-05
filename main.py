@@ -27,14 +27,4 @@ status = cycle(['стрим Санчиза','аккаунты на FunPay','ст
 async def change_status():
 	await client.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=(next(status))))
 
-
-
-@client.event
-async def on_member_join(member):
-	print(f'{member} joined.')
-
-@client.event
-async def on_member_remove(member):
-	print(f'{member} left.')
-
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
