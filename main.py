@@ -41,7 +41,7 @@ async def join(ctx):
 		
 	await ctx.send('Joined (channel)')
 	
-@client.command(pass_context=True, aliases=['j', 'joi'])
+@client.command(pass_context=True, aliases=['l', 'lea'])
 async def leave(ctx):
 	channel = ctx.message.author.voice.channel
 	voice = get(client.voice_clients, guild=ctx.guild)
