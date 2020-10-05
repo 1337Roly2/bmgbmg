@@ -41,25 +41,4 @@ async def emb(ctx):
 	# embed.set_thumbnail(url="https://pluralsight.imgix.net/paths/python-7be70baaac.png")
 	await client.send_message(channel, embed=embed)
 
-@on_message.before_invoke
-async def before_command(self, ctx):
-	if ctx.author.voice is None:
-	return await ctx.send("You are not connected to a voice channel.")
-
-	channel = ctx.author.voice.channel
-	if ctx.voice_client:
-	if ctx.voice_client.is_playing():
-	ctx.voice_client.stop()
-	return await ctx.voice_client.move_to(channel)
-
-	await channel.connect(reconnect=True)
-
-@client.command(pass_context=True)
-async def join(ctx):
-	author = ctx.message.author
-	voice_channel = author.voice_channel
-	vc = await client.join_voice_channel(voice_channel)
-
-
-
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
