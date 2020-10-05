@@ -44,6 +44,14 @@ async def leave(ctx):
 	voice = get(client.voice_clients, guild=ctx.guild)
 	
 	if voice and voice.is_connected():
-		await voice.disconnect()	
+		await voice.disconnect()
+
+@commands.Cog.listener()
+async def on_member_join(self,member):
+await channel('660039668506558484').send('message: ')
+
+@commands.Cog.listener()
+async def on_member_remove(self,member):
+await channel('660039696826761221').send('message: ')
 
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
