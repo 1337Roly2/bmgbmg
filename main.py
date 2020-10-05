@@ -35,5 +35,7 @@ async def info(ctx):
     embed.add_field(name="Server ID", value=f"{ctx.guild.id}")
     # embed.set_thumbnail(url=f"{ctx.guild.icon}")
     embed.set_thumbnail(url="https://pluralsight.imgix.net/paths/python-7be70baaac.png")
+    await ctx.send(embed=embed)
+
 
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
