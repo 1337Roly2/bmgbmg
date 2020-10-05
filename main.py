@@ -29,15 +29,15 @@ async def on_member_remove(member):
      
 @client.command(pass_contex = True)
 async def emb(ctx):
-    channel = ctx.message.channel
-    embed = discord.Embed(
-	    title=f"{ctx.guild.name}",
-	    description="Lorem Ipsum asdasd",
-	    colour=discord.Color.black()
-    )
-
-    # embed.set_thumbnail(url="https://pluralsight.imgix.net/paths/python-7be70baaac.png")
-    await client.send_message(channel, embed=embed)
+	channel = ctx.message.channel
+	embed = discord.Embed(
+		title=f"{ctx.guild.name}",
+		description="Lorem Ipsum asdasd",
+		colour=discord.Color.black()
+	)
+	
+	# embed.set_thumbnail(url="https://pluralsight.imgix.net/paths/python-7be70baaac.png")
+	await client.send_message(channel, embed=embed)
 
 
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
