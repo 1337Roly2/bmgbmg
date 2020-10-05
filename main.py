@@ -37,9 +37,6 @@ async def join(ctx):
 		await voice.move_to(channel)
 	else:
 		voice = await channel.connect()
-		print('The bot connected to (channel)')
-		
-	await ctx.send('Joined (channel)')
 	
 @client.command(pass_context=True, aliases=['l', 'lea'])
 async def leave(ctx):
@@ -47,10 +44,6 @@ async def leave(ctx):
 	voice = get(client.voice_clients, guild=ctx.guild)
 	
 	if voice and voice.is_connected():
-		await voice.disconnect()
-		print('The bot left (channel)')
-		await ctx.send('Bot left (channel)')
-	else:
-		await ctx.send('Bot doesnt stay in channels')	
+		await voice.disconnect()	
 
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
