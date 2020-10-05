@@ -20,17 +20,6 @@ async def on_ready():
 async def change_status():
 	await client.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=(next(status))))
 
-@client.command(pass_context=True)
-async def join(ctx):
-	channel = ctx.message.author.voice.voice_channel
-	awiat client.join_voice_channel(channel)
-
-@client.command(pass_context=True)
-async def leave(ctx):
-	server = ctx.message.server
-	voice_bot = client.voice_bot_in(server)
-	awiat voice_bot.disconnect()
-
 @client.event
 async def on_member_join(member):
 	print(f'{member} joined.')
