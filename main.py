@@ -20,7 +20,7 @@ async def change_status():
 	await client.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=(next(status))))
 
 @client.commands()
-async def join(cts):
+async def join(ctx):
 	global voice
 	channel = ctx.message.author.voice.channel
 	voice = get(client.voice_clients, guild=ctx.guild)
