@@ -39,6 +39,6 @@ async def emb(ctx):
 	embed.set_author(name='Marco')
 	embed.add_field(name='Fueld name', value='Field Name', inline=False)
 	# embed.set_thumbnail(url="https://pluralsight.imgix.net/paths/python-7be70baaac.png")
-	await client.send_message(channel, embed=embed)
+	await ctx.send (embed=embed)
 
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
