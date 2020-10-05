@@ -19,4 +19,11 @@ async def on_ready():
 async def change_status():
 	await client.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=(next(status))))
 
+@client.command()
+async def emb(ctx):
+	embed=discord.Embed()
+	embed.add_field(name="undefined", value="undefined", inline=False)
+	await self.bot.say(embed=embed)
+	
+	
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
