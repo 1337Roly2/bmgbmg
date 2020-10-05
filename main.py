@@ -27,7 +27,7 @@ async def on_member_join(member):
 async def on_member_remove(member):
 	print(f'{member} left.')
      
-@client.command(pass_contex = True)
+@client.command()
 async def emb(ctx):
 	channel = ctx.message.channel
 	embed = discord.Embed(
