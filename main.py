@@ -31,11 +31,13 @@ async def on_member_remove(member):
 async def emb(ctx):
 	channel = ctx.message.channel
 	embed = discord.Embed(
-		title = 'Title',
-		description = 'Lorem Ipsum asdasd',
-		colour = discord.Colour.black()
+		title='Title',
+		description='Lorem Ipsum asdasd',
+		colour=discord.Colour.black()
 	)
 	
+	embed.set_author(name='Marco')
+	embed.add_field(name='Fueld name', value='Field Name', inline=False)
 	# embed.set_thumbnail(url="https://pluralsight.imgix.net/paths/python-7be70baaac.png")
 	await client.send_message(channel, embed=embed)
 
