@@ -41,10 +41,10 @@ async def emb(ctx):
 	# embed.set_thumbnail(url="https://pluralsight.imgix.net/paths/python-7be70baaac.png")
 	await ctx.say(embed=embed)
 
-@commands.Cog.listener()
+@client.Cog.listener()
 async def on_member_join(self,member):
 
-@commands.Cog.listener()
+@client.Cog.listener()
 async def on_member_remove(self,member):
 
 
