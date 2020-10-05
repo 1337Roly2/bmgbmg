@@ -48,20 +48,4 @@ class TextBot(commands.Cog):
             await ctx.add_reaction(get(self.bot.emojis, name='t6')) 
             await ctx.add_reaction(get(self.bot.emojis, name='style2')) 
             #await ctx.add_reaction('👀')
-            await self.bot.process_commands(ctx) 
-            
-            
-@client.command()
-async def emb(ctx):
-
-	channel = ctx.message.channel
-	embed = discord.Embed(
-	title='Title',
-	description='Lorem Ipsum asdasd',
-	colour=discord.Colour.black()
-	)
-	
-	embed.set_author(name='Marco')
-	embed.add_field(name='Fueld name', value='Field Name', inline=False)
-	# embed.set_thumbnail(url="https://pluralsight.imgix.net/paths/python-7be70baaac.png")
-	await ctx.say(embed=embed)
+            await self.bot.process_commands(ctx)
