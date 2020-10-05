@@ -49,3 +49,10 @@ class TextBot(commands.Cog):
             await ctx.add_reaction(get(self.bot.emojis, name='style2')) 
             #await ctx.add_reaction('👀')
             await self.bot.process_commands(ctx) 
+
+
+    @commands.Cog.listener()
+    async def on_member_join(self,member):
+
+    @commands.Cog.listener()
+    async def on_member_remove(self,member):
