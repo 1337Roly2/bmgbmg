@@ -33,7 +33,6 @@ async def emb(ctx):
     embed = discord.Embed(
 	    title=f"{ctx.guild.name}",
 	    description="Lorem Ipsum asdasd",
-	    timestamp=datetime.datetime.utcnow(),
 	    colour=discord.Color.black()
     )
 
