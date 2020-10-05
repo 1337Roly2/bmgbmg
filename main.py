@@ -5,7 +5,7 @@ from discord.voice_client import VoiceClient
 from text_bot import TextBot
 from itertools import cycle
  
-client = commands.Bot(command_prefix = commands.when_mentioned_or('!'))
+client = commands.Bot(command_prefix = '.')
 
 
 
