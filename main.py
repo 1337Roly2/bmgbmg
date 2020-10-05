@@ -20,10 +20,25 @@ async def change_status():
 	await client.change_presence(status = discord.Status.online, activity=discord.Activity(type=discord.ActivityType.watching, name=(next(status))))
 
 @client.commands()
-async def emb(ctx):
-	embed=discord.Embed()
-	embed.add_field(name="undefined", value="undefined", inline=False)
-	await self.client.say(embed=embed)
+async def join(cts):
+	global voice
+	channel = ctx.message.author.voice.channel
+	voice = get(client.voice_clients, guild=ctx.guild)
+	
+	if voice and voice.is_connected():
+		await voice.move_to(channel)
+	else:
+		voice = await channel.connect
+	
+	await voice.disconnect()
+	if voice and voice.is_connected():
+		await voice.move_to(channel)
+	else:
+		voice = await channel.connect
+		print(f"The bot connected to (channel)\n")
+		
+	await ctx.send(f"Joined (channel)")
+	
 	
 	
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
