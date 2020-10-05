@@ -4,13 +4,11 @@ from discord.ext import commands, tasks
 from text_bot import TextBot
 from itertools import cycle
  
-client = commands.Bot(
-	command_prefix=commands.when_mentioned_or('!'),
-	description='BOT'
-)
+client = commands.Bot(command_prefix = '!')
+
 status = cycle(['стрим Санчиза','аккаунты на FunPay','стрим Пахана','стрим Стила','канал #about-us','стрим Эскобарова','за блоком']) 
 client.add_cog(TextBot(client))
- 
+
 @client.event
 async def on_ready():
 	change_status.start()
@@ -27,7 +25,6 @@ async def on_member_join(member):
 @client.event
 async def on_member_remove(member):
 	print(f'{member} left.')
-	      
-	
-	
+     
+
 bot.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
