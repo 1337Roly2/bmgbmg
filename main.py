@@ -29,14 +29,21 @@ async def on_member_remove(member):
      
 @client.command(pass_contex = True)
 async def emb(ctx):
-    embed = discord.Embed(title=f"{ctx.guild.name}", description="Lorem Ipsum asdasd", timestamp=datetime.datetime.utcnow(), color=discord.Color.black())
+    channel = ctx.message.channel
+    embed = discord.Embed(
+	    title=f"{ctx.guild.name}",
+	    description="Lorem Ipsum asdasd",
+	    timestamp=datetime.datetime.utcnow(),
+	    colour=discord.Color.black()
+    )
+
     embed.add_field(name="Server created at", value=f"{ctx.guild.created_at}")
     embed.add_field(name="Server Owner", value=f"{ctx.guild.owner}")
     embed.add_field(name="Server Region", value=f"{ctx.guild.region}")
     embed.add_field(name="Server ID", value=f"{ctx.guild.id}")
-    # embed.set_thumbnail(url=f"{ctx.guild.icon}")
-    embed.set_thumbnail(url="https://pluralsight.imgix.net/paths/python-7be70baaac.png")
-    await ctx.send(embed=embed)
+    embed.set_thumbnail(url=f"{ctx.guild.owner.icon}")
+    # embed.set_thumbnail(url="https://pluralsight.imgix.net/paths/python-7be70baaac.png")
+    await client.send_message(channel, embed=embed)
 
 
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
