@@ -6,7 +6,6 @@ from itertools import cycle
 from discord.utils import get
 import datetime
 import os
-import youtube_dl
  
 client = commands.Bot(command_prefix = '!')
 
@@ -42,6 +41,16 @@ async def join(ctx):
 		
 	await ctx.send('Joined (channel)')
 	
+@client.command(pass_context=True, aliases=['j', 'joi'])
+async def leave(ctx):
+	channel = ctx.message.author.voice.channel
+	voice = get(client.voice_clients, guild=ctx.guild)
 	
-	
+	if voice and voice.is_connected():
+		await voice.disconnect()
+		print('The bot left (channel)')
+		await ctx.send('Bot left (channel)')
+	else:
+		await ctx.send('Bot doesnt stay in channels')	
+
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
