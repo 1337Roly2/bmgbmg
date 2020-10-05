@@ -23,7 +23,7 @@ async def change_status():
 async def emb(ctx):
 	embed=discord.Embed()
 	embed.add_field(name="undefined", value="undefined", inline=False)
-	await self.bot.say(embed=embed)
+	await self.client.say(embed=embed)
 	
 	
 client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
