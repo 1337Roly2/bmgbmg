@@ -31,9 +31,9 @@ async def on_member_remove(member):
 async def emb(ctx):
 	channel = ctx.message.channel
 	embed = discord.Embed(
-		title=f"{ctx.guild.name}",
-		description="Lorem Ipsum asdasd",
-		colour=discord.Color.black()
+		title = 'Title',
+		description = 'Lorem Ipsum asdasd',
+		colour = discord.Colour.black()
 	)
 	
 	# embed.set_thumbnail(url="https://pluralsight.imgix.net/paths/python-7be70baaac.png")
