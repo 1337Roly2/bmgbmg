@@ -54,4 +54,4 @@ async def on_member_join(member):
 			await client.send_message(f"""Welcome {member.mention}""")
 
 
-client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
+#client.run('NjU5NzQ2MjkyNjgzMTEyNDU4.XgSynQ.F7zmQnNuJfmTlIIMLRHO87N8MqQ')
