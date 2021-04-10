@@ -9,7 +9,7 @@ import os
  
 client = commands.Bot(command_prefix = '!')
 
-status = cycle(['стрим Санчиза','аккаунты на FunPay','стрим Пахана','стрим Стила','канал #about-us','стрим Эскобарова','за блоком']) 
+status = cycle(['цены на FunPay','канал #about-us','за блоком']) 
 client.add_cog(TextBot(client))
 
 @client.event
